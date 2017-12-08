@@ -1,0 +1,22 @@
+<!-- ######### Writing Callback Function ############# -->
+<script type="text/javascript"> 
+function mbtlist(json) { 
+var  ListTag= "";
+for (var k = 0; k < json.feed.category.length; k++) 
+{ 
+ListTag +=  "<li>"+json.feed.category[k].term+"</li>"; 
+}
+var listing = "<H3>CATEGORY LIST :</H3><ol class='mbt-ol'>" 
++ListTag+ 
+"</ol> " ;
+document.write(listing); 
+} 
+</script>
+<!-- ######### Invoking the Callback Function ############# --> 
+<script type="text/javascript" src="http://www.k3world.info/feeds/posts/default?alt=json-in-script&callback=mbtlist"> 
+</script>
+<!-- ######### Styles for Look ############# -->
+<style> 
+.mbt-ol {width:300px; margin:10px;} 
+.mbt-ol li {border-bottom:1px dotted #ddd; padding:5px; } 
+</style>
